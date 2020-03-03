@@ -1,0 +1,26 @@
+security:
+  oauth2:
+    client:
+      client-id: books
+      client-secret: "$2a$10$mUZIf80XiG7NO2p2DuQiheKlLh81xs13yXqzSFbt4sKG9DD/Y5dIi"
+      resource-ids: books
+      scope: read, write
+      authorized-grant-types: password
+      refresh-token-validity-seconds: 604800
+      access-token-validity-seconds: 36000
+    resource:
+      jwt:
+        key-value: books12345
+
+
+remoteServiceUrl:
+  user: http://localhost:8081/userExporter
+  userPasswordEncoder: http://localhost:8081/userPasswordEncoderExporter
+
+server:
+  port: 8083
+
+logging:
+  level:
+    jo.seongju.books.authorization: debug
+    org.springframework: debug

@@ -1,0 +1,26 @@
+spring:
+  messages:
+    basename: messages/messages
+
+logging:
+  level:
+    jo.seongju.books: debug
+    org.springframework: debug
+
+oauth2:
+  resource-id: books
+  client-id: books
+  client-secret: 123
+  oauth-base-url: http://localhost:8083
+
+cors:
+  allowed-origins: "*"
+  exposed-headers: X-Refresh-Token
+  max-age: 1800
+
+remoteServiceUrl:
+  user: http://localhost:8081/userExporter
+  book: http://localhost:8081/bookExporter
+  keyword: http://localhost:8081/keywordExporter
+  keywordLog: http://localhost:8081/keywordLogExporter
+  userPasswordEncoder: http://localhost:8081/userPasswordEncoderExporter

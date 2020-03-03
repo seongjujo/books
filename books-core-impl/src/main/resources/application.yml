@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    username: sa
+    password: 123456
+    url: jdbc:h2:~/test
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    database: h2
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    show-sql: true
+  h2:
+    console:
+      enabled: false
+      path: /h2-console
+
+logging:
+  level:
+    jo.seongju.books.core: debug
+    org.springframework: debug
+  pattern:
+    dateformat: yyyy-MM-dd HH:mm:ss.SSS,Asia/Seoul
+
+server:
+  port: 8081
+
+api:
+  kakao:
+    apiUrl: "https://dapi.kakao.com/v3/search/book"
+    appKey: "f76560e1be30650cdb8d1c52a3ec9b3b"
+  naver:
+    apiUrl: "https://openapi.naver.com/v1/search/book.json"
+    clientId: "_DM8LLPniCentrU4PiOc"
+    clientSecret: "echwGFz7Q1"

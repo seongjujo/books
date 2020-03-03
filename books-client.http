@@ -1,0 +1,58 @@
+//
+// 회원가입
+//
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "username" : "kakao",
+  "password" : "123",
+  "passwordConfirmed" : "123"
+}
+
+
+###
+//
+// 로그인. Access Token 발급 받음. 아래 책검색, 인기 키워드 목록, 내 검색 히스토리 API 요청 시. HTTP Header의 Authorization 값을 "bearer access-token" 지정.
+//
+POST http://localhost:8080/authenticate
+Content-Type: application/json
+
+{
+  "username" : "kakao",
+  "password" : "123"
+}
+
+
+###
+//
+// 책 검색.
+// 파라미터: keyword(필수): 검색할 키워드, page(옵션): 페이지 번호. default: 1, size(옵션): 한페이지 보여준 책 개수. default: 10
+// Authorization: 로그인 하고 나서 발급 받은 Access Token 지정
+//
+GET http://localhost:8080/api/books?keyword=프로그래밍&page=1&size=5
+Accept: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiYm9va3MiXSwidXNlcl9uYW1lIjoia2FrYW8iLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiYWN0aXZlIjp0cnVlLCJleHAiOjE1ODMyOTUxMjUsImF1dGhvcml0aWVzIjpbIlVTRVIiXSwianRpIjoiNTEzYTRhOTQtOWEyNi00M2JkLWI4ZDItN2FmN2Y3Y2EwZmI4IiwiY2xpZW50X2lkIjoiYm9va3MifQ.wSc84zQYT75Sn_dtf0Kkw-3IwcgJxb9C-ds-y-JNEKM
+
+
+###
+//
+// 인기 키워드 목록
+// Authorization: 로그인 하고 나서 발급 받은 Access Token 지정
+//
+GET http://localhost:8080/api/keywords/top
+Accept: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiYm9va3MiXSwidXNlcl9uYW1lIjoia2FrYW8iLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiYWN0aXZlIjp0cnVlLCJleHAiOjE1ODMyOTUxMjUsImF1dGhvcml0aWVzIjpbIlVTRVIiXSwianRpIjoiNTEzYTRhOTQtOWEyNi00M2JkLWI4ZDItN2FmN2Y3Y2EwZmI4IiwiY2xpZW50X2lkIjoiYm9va3MifQ.wSc84zQYT75Sn_dtf0Kkw-3IwcgJxb9C-ds-y-JNEKM
+
+
+###
+//
+// 내 검색 히스토리
+// Authorization: 로그인 하고 나서 발급 받은 Access Token 지정
+//
+GET http://localhost:8080/api/keywords/history
+Accept: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiYm9va3MiXSwidXNlcl9uYW1lIjoia2FrYW8iLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiYWN0aXZlIjp0cnVlLCJleHAiOjE1ODMyOTUxMjUsImF1dGhvcml0aWVzIjpbIlVTRVIiXSwianRpIjoiNTEzYTRhOTQtOWEyNi00M2JkLWI4ZDItN2FmN2Y3Y2EwZmI4IiwiY2xpZW50X2lkIjoiYm9va3MifQ.wSc84zQYT75Sn_dtf0Kkw-3IwcgJxb9C-ds-y-JNEKM
+
+###
+
