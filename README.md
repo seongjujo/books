@@ -26,6 +26,7 @@ Naver 책검색 API와 연동하는 Library 입니다. books-core-impl에서 dep
 우선 프로젝트 root에서 maven 명령어 `mvn clean install` 실행합니다. 실행이 실패 될 경우 books-kakao, books-naver, books-core, books-core-impl, books-authorization, books-endpoint 순서대로 `mvn clean install` 명령어를 실행하세요.
 
 #### 실행
-1. 컴파일 다 되면 우선 books-core-impl 모듈을 실행하시고.
-2. 그 다음 books-authorization 모듈을 실행하시고.
-3. 마지막 books-endpoint 실행해주세요.
+프로젝트가 이미 IntelliJ IDEA에 import 될 경우 아래 순서대로 실행합니다.
+1. 우선 books-core-impl 모듈을 실행합니다.
+2. 그 다음 books-authorization 모듈을 실행합니다.
+3. 마지막 books-endpoint 모듈을 실행합니다.
