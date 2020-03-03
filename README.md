@@ -30,3 +30,6 @@ Naver 책검색 API와 연동하는 Library 입니다. books-core-impl에서 dep
 1. 우선 books-core-impl 모듈을 실행합니다.
 2. 그 다음 books-authorization 모듈을 실행합니다.
 3. 마지막 books-endpoint 모듈을 실행합니다.
+
+#### API 테스트 방법  
+프로젝트 목록에 books-client.http 파일 참조
